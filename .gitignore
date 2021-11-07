@@ -1,0 +1,5 @@
+# block .env file from being accidentally committed in public view 
+.env
+
+# ignore build/ dir 
+build 
