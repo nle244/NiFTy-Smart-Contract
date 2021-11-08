@@ -6,7 +6,7 @@ A place for other project-related documentation.
 
 ### Prerequisites
 
--[PlantUML](https://plantuml.com/)
+- [PlantUML](https://plantuml.com/)
 
 ### Folder Structure
 
