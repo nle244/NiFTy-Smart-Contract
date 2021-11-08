@@ -1,0 +1,21 @@
+@startuml
+
+title Minting a new NFT
+
+participant "UI\nModule" as ui
+participant Core as core 
+participant "Minting\nModule" as mint 
+Participant "IPFS\nModule" as ipfs 
+
+ui --> ui : User attaches an image\nto be minted as an NFT\nand clicks UPLOAD
+ui -> core : { image_file, num_of_copies }
+core -> ipfs : { image_file } 
+ipfs --> ipfs : Add image to\nlocal node
+ipfs -> core : { ipfs_hash }
+core -> mint : { ipfs_hash, num_of_copies }
+mint --> mint : Wait for contract to\nfinish executing
+mint -> core : "Minting complete" 
+mint -> core : { <information> }
+core -> ui : Alert user and\nrender <information> 
+
+@enduml
