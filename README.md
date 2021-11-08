@@ -43,6 +43,35 @@ $ brownie run scripts/simple_collectible/deploy_simple.py --network rinkeby
 $ brownie run scripts/simple_collectible/create_collectible.py --network rinkeby
 ```
 
+### Tell git to Ignore `.env` file modifications 
+
+*Answer pulled from [here](https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git/40272289#40272289)*
+
+If you modify your `.env` file to run demos, git is going to complain about it having uncommitted changes despite it being listed in `.gitignore`:
+
+```
+$ git status
+On branch development
+Your branch is up to date with 'origin/development'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .env
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+Tell git that you want to keep your own version of the file without polluting the repository (you definitely don't want your wallet's private key showing up on the repo):
+
+```
+$ git update-index --skip-worktree .env
+```
+
+## Diagrams for Future Deliverables 
+
+See [docs/README.md](docs/README.md). 
+
 ## Projected Project Structure 
 
 ### Components Overview 
