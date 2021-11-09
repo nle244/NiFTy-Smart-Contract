@@ -1,0 +1,11 @@
+{
+	"name": "TREE", 
+	"description": "Oh look, it's a tree", 
+	"image": "https://ipfs.io/ipfs/QmWTc8TzMyjZAJZzPiy3Vy8BLctGVwzQedTCs5KjSVJbGe?filename=tree.png", 
+	"attributes": [
+		{
+			"trait_type": "number of nodes", 
+			"value": 3
+		}
+	]
+}

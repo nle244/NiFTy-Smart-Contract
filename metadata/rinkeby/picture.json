@@ -1,0 +1,11 @@
+{
+	"name": "DAB", 
+	"description": "Oh wow, it's the lead singer from Pink Fluid!", 
+	"image": "https://ipfs.io/ipfs/QmSy7KCMWrvpMYrS4U8yAY56akKJLa1x9qbekgXYayDJMy?filename=picture.png", 
+	"attributes": [
+		{
+			"trait_type": "rarity",
+			"value": 5
+		}
+	]
+}

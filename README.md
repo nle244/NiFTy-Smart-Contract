@@ -36,12 +36,33 @@ export PRIVATE_KEY="your wallet's private key (don't let anyone else see this)"
 $ source .env 
 ```
 
-See nft-mix's [documentation](https://github.com/PatrickAlphaC/nft-mix#for-the-simple-erc721) on how to create the testnet token. Since we don't expect the content creators' NFT to interact with other NFTs in any meaningful way (this isn't Pokemon), we can more or less stick with the "simple" token example: 
 
+Once properly set-up, run `main.py` to test it out: 
+
+``` 
+$ ./main.py
+testing...
+Transaction sent: 0x304ad3fb15bb42869de79a61721858eb157d5f4674dac0f796743eabac354c83
+  Gas price: 1.000000015 gwei   Gas limit: 2017541   Nonce: 16
+  ArtistPicture.constructor confirmed   Block: 9610829   Gas used: 1834129 (90.91%)
+  ArtistPicture deployed at: 0x3c16fb87AE40997fC46082B12FDB243F9FA0A564
+
+Transaction sent: 0x247711b1550cf588d46b505ca51e0e6168d441cae51f6630d3a56018c12462c3
+  Gas price: 1.000000014 gwei   Gas limit: 279320   Nonce: 17
+  ArtistPicture.createCollectible confirmed   Block: 9610830   Gas used: 253928 (90.91%)
+
+Minting complete: https://testnets.opensea.io/assets/0x3c16fb87AE40997fC46082B12FDB243F9FA0A564/<Transaction '0x247711b1550cf588d46b505ca51e0e6168d441cae51f6630d3a56018c12462c3'>
 ```
-$ brownie run scripts/simple_collectible/deploy_simple.py --network rinkeby
-$ brownie run scripts/simple_collectible/create_collectible.py --network rinkeby
-```
+
+I've pinned a couple of different metadata files to be tested out: 
+- https://ipfs.io/ipfs/QmPwpUKU1KAxbuTCNBCLfE6N4EPWvyY7g2oBCjfLvtHvof?filename=picture.json (this is already the default)
+- https://ipfs.io/ipfs/QmPhJ3LYLc7u3AGzbNEvPaa9TWAVuPkUtv7GCNmoRjUVgJ?filename=tree.json (an image of a binary tree)
+
+### Issues
+
+1. OpenSea link generation is being a pain in the ass. Check my testnet OpenSea page ([link](https://testnets.opensea.io/0x631018e19d1b882e0ae8e6886d2248c12b6d6ee4?tab=created)) instead to view the new token. It will take a few minutes for the new token to show up. 
+2. Contract needs to be persistent. There's a small section in the official documentation ([link](https://eth-brownie.readthedocs.io/en/stable/core-contracts.html#persisting-contracts-between-sessions)) on how to persist it between sessions.
+
 
 ### Tell git to Ignore `.env` file modifications 
 
