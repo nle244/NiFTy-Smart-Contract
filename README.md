@@ -60,11 +60,11 @@ I've pinned a couple of different metadata files to be tested out:
 
 ### Issues
 
-1. OpenSea link generation is being a pain in the ass. Check my testnet OpenSea page ([link](https://testnets.opensea.io/0x631018e19d1b882e0ae8e6886d2248c12b6d6ee4?tab=created)) instead to view the new token. It will take a few minutes for the new token to show up. 
+1. OpenSea link generation is being a pain in the ass and doesn't work yet. Once minted, check your own wallet's testnet OpenSea page (`https://testnets.opensea.io/<YOUR WALLET ADDRESS>`) instead to view the new token. It will take a few minutes for the new token to show up. 
 2. Contract needs to be persistent. There's a small section in the official documentation ([link](https://eth-brownie.readthedocs.io/en/stable/core-contracts.html#persisting-contracts-between-sessions)) on how to persist it between sessions.
 
 
-### Tell git to Ignore `.env` file modifications 
+## IMPORTANT: Tell git to Ignore `.env` file modifications 
 
 *Answer pulled from [here](https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git/40272289#40272289)*
 
