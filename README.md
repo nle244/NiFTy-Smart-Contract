@@ -58,11 +58,6 @@ I've pinned a couple of different metadata files to be tested out:
 - https://ipfs.io/ipfs/QmPwpUKU1KAxbuTCNBCLfE6N4EPWvyY7g2oBCjfLvtHvof?filename=picture.json (this is already the default)
 - https://ipfs.io/ipfs/QmPhJ3LYLc7u3AGzbNEvPaa9TWAVuPkUtv7GCNmoRjUVgJ?filename=tree.json (an image of a binary tree)
 
-### Issues
-
-1. OpenSea link generation is being a pain in the ass and doesn't work yet. Once minted, check your own wallet's testnet OpenSea page (`https://testnets.opensea.io/<YOUR WALLET ADDRESS>`) instead to view the new token. It will take a few minutes for the new token to show up. 
-2. Contract needs to be persistent. There's a small section in the official documentation ([link](https://eth-brownie.readthedocs.io/en/stable/core-contracts.html#persisting-contracts-between-sessions)) on how to persist it between sessions.
-
 
 ## IMPORTANT: Tell git to Ignore `.env` file modifications 
 
