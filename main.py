@@ -15,15 +15,20 @@ def main():
 
     network.connect('rinkeby')
 
+    if len(ArtistPicture) == 0:
+        picture_nft = ArtistPicture.deploy({'from': minter_wallet})
+    else:
+        picture_nft = ArtistPicture[-1]
 
-    picture_nft = ArtistPicture.deploy({'from': minter_wallet})
+    token_id = picture_nft.tokenCounter()
 
 
-    picture_nft.createCollectible(sample_token_uri, {'from': minter_wallet})
+    transaction = picture_nft.createCollectible(sample_token_uri, {'from': minter_wallet})
+    transaction.wait(1)
 
 
     print("Minting complete: {}".format(
-        OPENSEA_FORMAT.format(picture_nft.address, 0)
+        OPENSEA_FORMAT.format(picture_nft.address, token_id)
         ))
 
     
