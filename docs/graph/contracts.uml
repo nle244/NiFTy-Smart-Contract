@@ -1,0 +1,69 @@
+@startuml
+
+
+actor "Artist 'John Doe'" as artist
+
+component Contracts {
+    component genericContractPic [Generic contract for 
+        static picture NFTs]
+    interface "createCollectible()" as genericCreatePic
+    genericContractPic -u- genericCreatePic
+    
+    component genericContractVideo [Generic contract for
+    video NFTs]
+    interface "createCollectible()" as genericCreateVideo
+    genericContractVideo -u- genericCreateVideo
+}
+
+
+artist .> Contracts : 1) Artist wants to create a\nnew NFT for his selfies
+
+cloud Ethereum\nBlockchain as blockchain {
+    component contractPicture [
+        Name="John's selfies"
+        Addr=0xABCD...
+    ] 
+    interface "createCollectible()" as createPicture
+    contractPicture -- createPicture
+    
+    component "Me at the\nrestaurant" as nft1 {
+        component [metadata] as nft1_meta
+    }
+
+    component "I'm at\nthe concert!" as nft2 {
+        component [metadata] as nft2_meta
+    }
+}
+
+genericContractPic ...> contractPicture : 2) Contract is deployed\nto the blockchain
+
+artist --( createPicture : 3) Create two selfie NFTs\nwith different pictures
+
+database IPFS {
+    skinparam componentStyle rectangle
+    component [selfie 001.json] as selfie1_json
+    component [selfie 001.jpg] as selfie1_pic
+    selfie1_json -> selfie1_pic
+    
+    component [selfie concert.json] as selfie2_json
+    component [selfie concert.jpg] as selfie2_pic
+    selfie2_json -> selfie2_pic
+}
+
+
+nft1_meta ..> selfie1_json : links to 
+nft2_meta ..> selfie2_json : links to
+
+contractPicture ---> nft1 : 4) Contract spawns NFTs
+contractPicture ---> nft2 
+
+node Opensea.io {
+    package Collections {
+        component [John's Selfies] as john_nft
+
+    }
+}
+
+john_nft ...> blockchain : 5) Blockchain explorers\ndetect NFT transaction
+ 
+@enduml
