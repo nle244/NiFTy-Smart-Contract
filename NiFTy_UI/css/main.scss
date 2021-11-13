@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap');
+
+:root {
+    --primary-color: rgba(188, 145, 229, 0.692);
+}
+
+body {
+    background: #f2f2f2;
+    margin: 0;
+    font-family: 'Poppins'
+}
+
+//Nav-bar Menu shift list right(
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+//Menu-icon placement
+.menu {
+    width: 80px;
+    margin-top: 8%;
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+//Nav-bar pull down menu
+nav ul{
+    position: fixed;
+    width: 40%;
+    top: 0;
+    right: 0;
+    text-align: left;
+    background: rgb(36,41,44);
+    height: 100%;
+    z-index: 7;
+    padding-top: 3em;
+}
+
+//Website feature list layout (tap-button)
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: .5em;
+    font-size: 1.3em;
+    background-color: rgb(49,55,59);
+
+    &:hover {
+        color:var(--primary-color);
+
+        font-weight: bold;
+    }
+}
+
+//exit-button layout
+.exit-btn {
+    margin-bottom: 1em;
+    margin-top: -1.3em;
+    text-align: right;
+    padding: 0 1.4em;
+}
+.exit-btn img {
+    width: 40px;
+    cursor: pointer
+}
+
+//Hide menu list
+.hide-mobile {
+    display:none;
+}
+
+.server {
+    width: 70%;
+    margin: 2em auto 2em 25%;
+}
+
+//Nav-bar
+.navbar {
+    background: rgb(255, 255, 255);
+    padding: 1em;
+
+    // "SmartContract" logo stylization
+    .logo {
+        font-size: 3em;
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        margin-top: 0.5%;
+        margin-left: -3em;
+
+        //Color "contract"
+        span{
+            color: var(--primary-color);
+        }
+    }
+}
+
+//List of features
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+//HERO section (alignment)
+.hero {
+    text-align: center;
+}
+//HERO (text stylization)
+.left-col {
+
+    .subhead{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+        letter-spacing: .3em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+    }
+
+    //BEGIN MINTING button
+    .hero-cta {
+        .primary-cta {
+            text-decoration: none;
+            color: white;
+            background: var(--primary-color);
+            padding: .6em 1.3em;
+            font-size: 1.4em;
+            border-radius: 5em;
+            display: inline-block;
+            margin-top: 1em;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//FEATURE section color
+section.features-section {
+    background: #20273e;
+    color: white;
+    border-radius: 10%;
+}
+
+//FEATURE list
+ul.features-list{
+    margin: 0;
+    padding-left: .1em;
+
+    li {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative;
+
+        &:before {
+            content: '';
+            left: -2em;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('../images/bullet.jpeg');
+            background-size: contain;
+            margin-right: .5em;
+        }
+    }
+}
+
+//CONTACT section (stylization&layout)
+h2 {
+    font-size: 3em;
+}
+label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+input, textarea {
+    width: 100%
+    padding .8em;
+    margin-bottom: 1em;
+    border-radius: .3em;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+//SmartContract (title stylization)
+h3 {
+    font-size: 3em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: rgba(22, 173, 211, 0.904);
+}
+//Go Mint (title stylization)
+h4 {
+    font-size: 3em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: black;
+}
+
+//CONTACT submit-button (stylization)
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: none;
+    margin-bottom: 5em;
+    border-radius: 5em;
+    display: inherit;
+    padding: .8em 2em;
+    width: unset;
+    cursor: pointer;
+}
+
+
+nav.menu-btn {
+    display: block;
+}
+
+//when screen resolution is larger than 768px (change Nav-bar)
+@media only screen and (min-width: 768px) {
+    .server {
+        width: 50%;
+    }
+    h1 {
+        font-size: 5em;
+        margin: 0;
+    }
+    .subhead {
+        font-size: 1.4em;
+        margin-bottom: 1%;
+    }
+}
+//when screen resolution is larger than 1024px (change Nav-bar)
+@media only screen and (min-width: 1024px) {
+    .cta {
+        width: 50%;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    //Nav-bar media tranformation
+    .show-desktop {
+        display: block;
+    }
+
+    .hide-desktop {
+        display: none;
+    }
+
+    nav ul {
+        position: inherit;
+        width: auto;
+        background: none;
+        height: auto;
+        display: flex;
+        padding-top: 0;
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+    nav ul li a {
+        color: black;
+        background-color: inherit;
+        text-align: right;
+        padding: 1em 2em;
+    }
+
+    nav ul li a:hover {
+        background-color: inherit;
+    }
+
+    ul.features-list {
+        display: block;
+        margin-left: .1em;
+
+        li {
+            font-size: 1.8em;
+
+            &:before {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+    }
+
+    //FEATURES (layout & img)-----------------------------------
+    .features-section {
+        position:relative;
+    }
+    .features-section img {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 700px;
+        bottom: -10em;
+    }
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    //goMint (stylization)------------------------------------------
+    .wrapper{
+        display: grid;
+        height: 100%;
+        place-items: center;
+        text-align: center;
+        
+    }
+    .container-m{
+        height: 450px;
+        width: 530px;
+    }
+    .container-m .wrapper{
+        height: 300px;
+        width: 100%;
+        margin-left: 6em;
+        border-radius: 10px;
+        background: #fff;
+        border: 2px dashed #c2cdda;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow:hidden;
+        
+    }
+    .wrapper2{
+        margin-top: -8em;
+        margin-left: 6.5em;
+    }
+
+    .wrapper .image{
+        position: abolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrapper .image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .wrapper .upload-file{
+        font-size: 48px;
+        color: #9658fe;
+    }
+
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Smart Contracts</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class= "navbar">
+        <div class="container">
+            <header>
+                <a class="logo" href="index.html">Smart<span>Contracts</span></a>
+            
+                <nav>
+                    <a hrf="#" class = "hide-desktop">
+                        <img id="mobile-cta" src="images/menu-icon.svg" alt="toggle menu" class="menu">
+                    </a>
+
+                    <ul class="show-desktop hide-mobile" id="nav">
+                        <li id="exit" class="exit-btn hide-desktop">
+                            <img id = "mobile-exit" src="images/exit-icon.svg" class= "mobile-menu-exit" alt="exit menu"></li>
+                        </li>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="features.html">features</a></li>
+                        <li><a href="contact.html">contact</a></li>
+                        <li class="go-mint-cta"><a href="goMint.html">Go MINT</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="left-col">
+                <p class ="subhead">it's quick & easy!</p>
+                <h1>MINT YOUR OWN DIGITAL ART</h1>
+
+                <div class="hero-cta">
+                    <a href="goMint.html" class="primary-cta">Go MINT</a>
+                </div>
+            </div>
+
+            <img src="images/illustration.svg" class="hero-img" alt="Illustration">
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h3>SmartContract Features</h3>
+            <ul class="features-list">
+                <li>Intuitive & User-Friendly Design</li>
+                <li>Upload Image</li>
+                <li>Define Metadata</li>
+                <li>Create NFT Smart Contract</li>
+                <li>Sell Your Art on Ethereum</li>
+            </ul>
+
+            <img src="images/collage.jpg" alt="NFT Collage">
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-left">
+                <h2>Contact</h2>
+                
+                <form action="">
+                    <label for="name">Name:</label>
+                    <input type="text" id="Name:" name="name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                
+                    <input type="submit" class="send-message-cta" value="Send message">
+                </form>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+            nav = document.querySelection('nav')
+            mobileBtnExit = document.getElementbyId('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+    </script>
+
+</body>
+</html>
