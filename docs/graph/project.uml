@@ -1,0 +1,31 @@
+@startuml
+
+actor User as user 
+
+package "Project" {
+    component [IPFS\nModule] as ipfsmodule 
+    component [Core] as core 
+    component [UI\nModule] as ui 
+    component [Minting\nModule] as mint
+}
+
+database "IPFS node" {
+    interface "HTTP API" as ipfs
+}
+
+package "Brownie (or Web3)" {
+    component [Ethereum\ntest network] as test
+    interface "Framework\nlibraries" as brownie
+}
+
+user .. ui
+
+ui -down- core
+core -down-> mint
+core -down-> ipfsmodule
+
+ipfsmodule --( ipfs
+mint --left--( brownie
+brownie -down- test
+
+@enduml
