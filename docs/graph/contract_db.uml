@@ -1,0 +1,22 @@
+@startuml
+
+skinparam componentStyle rectangle
+
+actor "Artist 'John Doe'" as artist
+
+database Storage {
+    component [John Doe's\ncontract addresses] as contracts
+}
+
+skinparam componentStyle default
+
+package Project {
+    component [UI] as ui 
+    interface "DB interface" as db
+    
+}
+
+artist ..> ui : 1) Artist wants to reuse\ntheir selfie NFT contract
+db <-> Storage : 2) Query and receive\ncontract address\n0xABCD...
+
+@enduml

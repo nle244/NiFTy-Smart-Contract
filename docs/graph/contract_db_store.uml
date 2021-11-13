@@ -1,0 +1,36 @@
+@startuml
+
+skinparam componentStyle rectangle
+
+actor "Artist 'John Doe'" as artist
+
+database Storage {
+    component [John Doe's\ncontract addresses] as contracts
+}
+
+skinparam componentStyle default
+
+package Project {
+    component [UI] as ui 
+    component [<internals>] as internals
+    interface "DB interface" as db
+    ui - internals
+}
+
+cloud Ethereum\nBlockchain as blockchain {
+    component contract [Name="John's Selfies"
+    Addr=0xABCD...] 
+    
+    collections "selfie NFTs" as nfts
+    
+}
+
+
+artist ..> ui : 1) Artist creates a new NFT contract
+internals --> blockchain : 2) Contract is deployed
+contract -> nfts : 3) NFTs are minted
+contract --> internals : 4) Keep address for future use
+db <--> Storage : 5) Store contract address\n0xABCD...
+
+
+@enduml
