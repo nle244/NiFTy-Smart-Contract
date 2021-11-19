@@ -13,3 +13,5 @@ filename = fd.askopenfilename(
     title='Open a file',
     initialdir='/',
     filetypes=filetypes)
+
+print(filename)
