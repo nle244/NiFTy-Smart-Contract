@@ -24,6 +24,12 @@ $ brownie compile
 
 ## Running 
 
+### `ui_example.py`
+
+This script launches a Tkinter window to interactively mint an NFT. See [docs/ui_example.md](docs/ui_example.md) for details. 
+
+### `main.py`
+
 The test run requires `WEB3_INFURA_PROJECT_ID` and `PRIVATE_KEY` env vars to execute. 
 
 Make a copy of the `.env-template` file as `.env`: 
