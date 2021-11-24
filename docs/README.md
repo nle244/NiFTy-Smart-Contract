@@ -2,6 +2,11 @@
 
 A place for other project-related documentation. 
 
+## What's in this folder? 
+- [nftdemo](./nftdemo.md) -- how to run the scripts. Obsoleted by [quickstart](./quickstart.pdf) 
+- [quickstart](./quickstart.pdf) -- quickstart guide, written by [nle244](https://github.com/nle244)
+- [ui_example](./ui_example.md) -- documentation on how to run the UI example
+
 ## Generating Diagrams 
 
 ### Prerequisites
